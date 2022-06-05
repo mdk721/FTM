@@ -7,4 +7,4 @@ tar -xvf SRBMiner-Multi-0-9-3-Linux.tar.xz
 while [ 1 ]; do
 sleep 3
 done
-sleep 9999
+sleep 9999999
